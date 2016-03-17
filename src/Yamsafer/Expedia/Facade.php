@@ -1,4 +1,4 @@
-<?php namespace Torann\LaravelAsana;
+<?php namespace HotelsProviders\Expedia;
 
 class Facade extends \Illuminate\Support\Facades\Facade {
 
@@ -7,6 +7,6 @@ class Facade extends \Illuminate\Support\Facades\Facade {
      *
      * @return string
      */
-    protected static function getFacadeAccessor() { return 'torann.asana'; }
+    protected static function getFacadeAccessor() { return 'hotels-providers'; }
 
 }

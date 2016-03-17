@@ -1,4 +1,4 @@
-<?php namespace Torann\LaravelAsana;
+<?php namespace HotelsProviders\Expedia;
 
 use Exception;
 use InvalidArgumentException;

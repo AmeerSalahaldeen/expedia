@@ -1,4 +1,4 @@
-# Asana for Laravel 5
+# Asana for Laravel
 
 [![Latest Stable Version](https://poser.pugx.org/torann/laravel-asana/v/stable.png)](https://packagist.org/packages/torann/laravel-asana) [![Total Downloads](https://poser.pugx.org/torann/laravel-asana/downloads.png)](https://packagist.org/packages/torann/laravel-asana)
 
@@ -8,41 +8,29 @@
 
 - [Laravel Asana on Packagist](https://packagist.org/packages/torann/laravel-asana)
 - [Laravel Asana on GitHub](https://github.com/torann/laravel-asana)
-- [Laravel 4 Installation](https://github.com/Torann/laravel-asana/tree/0.1.2)
 
 To get the latest version of Laravel Asana simply require it in your `composer.json` file.
 
 ~~~
-"torann/laravel-asana": "0.2.*@dev"
+"torann/laravel-asana": "0.1.*@dev"
 ~~~
 
 You'll then need to run `composer install` to download it and have the autoloader updated.
 
-Once installed you need to register the service provider with the application. Open up `config/app.php` and find the `providers` key.
-
-```php
-'providers' => array(
-    'Torann\LaravelAsana\ServiceProvider',
-)
-```
-
-Laravel Asana also ships with a facade which provides the static syntax for creating collections. You can register the facade in the aliases key of your `config/app.php` file.
-
-```php
-'aliases' => array(
-    'Asana' => 'Torann\LaravelAsana\Facade',
-)
-```
-
 ### Create configuration file using artisan
 
 ```
-$ php artisan vendor:publish
+$ php artisan config:publish torann/laravel-asana
 ```
 
-A configuration file will be publish to `config/asana.php`.
+Now add Asana in your providers array `app/config/app.php`
+
+~~~
+'Torann\LaravelAsana\ServiceProvider'
+~~~
 
 ## Quick Examples
+
 
 #### Get a specific user
 
@@ -87,12 +75,6 @@ Asana::createTask(array(
    'assignee'  => 'foo@bar.com', // Assign task to...
    'followers' => array('3714136', '5900783') // We add some followers to the task... (this time by ID)
 ));
-```
-
-#### Delete a task
-
-```php
-Asana::deleteTask($task_id);
 ```
 
 #### Adding task to project
@@ -261,13 +243,4 @@ Asana::getTasksByFilter(array(
     'workspace' => 111221
 ));
 ```
-
-## Change Log
-
-#### v0.2.0
-
-- Update to Laravel 5
-
-#### v0.1.1
-
-- Code cleanup
+# expedia
